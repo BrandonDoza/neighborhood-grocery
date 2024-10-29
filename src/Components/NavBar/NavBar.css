@@ -1,0 +1,19 @@
+.navbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border: 2px solid black;
+}
+
+.title-element {
+    border: 2px solid black;
+    width: 33%;
+}
+
+.nav-buttons {
+    width: 33%;
+    border: 2px solid black;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-end;
+}
