@@ -1,0 +1,31 @@
+.main-page {
+    background-image: url('https://www.eatright.org/-/media/images/eatright-landing-pages/foodgroupslp_804x482.jpg?as=0&w=967&rev=d0d1ce321d944bbe82024fff81c938e7&hash=E6474C8EFC5BE5F0DA9C32D4A797D10D');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 700px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text-section {
+    width: 50%;
+    height: 500px;
+    background-color: rgba(255, 255, 255, 0.85);
+    color: green;
+    border: 2px solid black;
+    border-radius: 8px;
+    padding: 20px;
+    overflow-y: scroll;
+}
+
+.welcome-text {
+    font-weight: bolder;
+    font-size: 1.75em;
+}
+
+.about-text {
+    font-weight: bold;
+    font-size: 1.1em;
+}
