@@ -1,5 +1,6 @@
 import './Search.css'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import FoodCard from '../FoodCard/FoodCard'
 
 export default function Search({fetchFoodItem}) {
     const [searchedFoods, setSearchedFoods] = useState([])
@@ -9,6 +10,10 @@ export default function Search({fetchFoodItem}) {
 
     const {foodItem} = form
 
+    useEffect(() => {
+        console.log(searchedFoods, 'searched')
+    }, [searchedFoods]);
+
     function handleChange(e) {
         setForm((prevData) => {
             return {
@@ -17,22 +22,23 @@ export default function Search({fetchFoodItem}) {
             }
         }
        )
-       console.log(form)
+       setSearchedFoods([])
     }
 
     async function handleSubmit(e) {
         e.preventDefault();
         if (!form.foodItem) { 
-            return console.error('You must fill out the form');
+            return alert('You must fill out the form');
         } else {
             try {
                 const data = await fetchFoodItem(foodItem);
-                setSearchedFoods(data.hints);  // Update state with the resolved data
-                console.log(searchedFoods);
+                setSearchedFoods(data.hints);  
+                
             } catch (error) {
                 console.error('Error fetching food item:', error);
             }
         }
+        console.log(searchedFoods, 'foods');
         resetForm()
     }
 
@@ -41,6 +47,16 @@ export default function Search({fetchFoodItem}) {
             foodItem: ''
         })
     }
+
+    const foodsToDisplay = searchedFoods.map((food) => {
+        return (
+            <FoodCard
+            id={food.food.foodId}
+            name={food.food.label}
+            img={food.food.image}
+            />
+        )
+    })
 
     return (
         <div className='search-page'>
@@ -54,7 +70,10 @@ export default function Search({fetchFoodItem}) {
          onChange={handleChange}
          />
          </form>
-         <button onClick={handleSubmit}>Submit</button>
+         <button className='submit-button' onClick={handleSubmit}>Submit</button>
+         <div className='foods-display'>
+            {foodsToDisplay}
+         </div>
         </div>
     )
 }

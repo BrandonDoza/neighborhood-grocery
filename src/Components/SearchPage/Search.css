@@ -1,0 +1,20 @@
+.food-input {
+    width: 25%;
+    height: 50px;
+    border-radius: 8px;
+    margin: 20px;
+    text-align: center;
+    font-family: "Poiret One", sans-serif;
+    font-weight: 800;
+    font-size: larger;
+}
+
+.submit-button {
+    width: 12%;
+    height: 45px;
+    border-radius: 8px;
+    background-color: rgb(179, 232, 179);
+    font-family: "Poiret One", sans-serif;
+    font-weight: 800;
+    font-size: larger;
+}
