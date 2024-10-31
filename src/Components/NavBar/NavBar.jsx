@@ -10,7 +10,9 @@ export default function NavBar() {
          </div>
          </NavLink>  
                 <div className='nav-buttons'>
-                <p>Search Groceries</p>
+                    <NavLink to='/search' className='link'>
+                    <p>Search Groceries</p>
+                    </NavLink>
                 <p>My Cart</p>
             </div>
         </div>
