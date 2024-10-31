@@ -4,6 +4,7 @@ import FoodCard from '../FoodCard/FoodCard'
 
 export default function Search({fetchFoodItem}) {
     const [searchedFoods, setSearchedFoods] = useState([])
+    const [placeholder, setPlaceholder] = useState('Enter a Food')
     const [form, setForm] = useState({
         foodItem: ''
     })
@@ -40,12 +41,17 @@ export default function Search({fetchFoodItem}) {
         }
         console.log(searchedFoods, 'foods');
         resetForm()
+        setPlaceholder('Enter a Food')
     }
 
     function resetForm() {
         setForm({
             foodItem: ''
         })
+    }
+
+    function handleFocus() {
+        setPlaceholder('')
     }
 
     const foodsToDisplay = searchedFoods.map((food) => {
@@ -60,17 +66,18 @@ export default function Search({fetchFoodItem}) {
 
     return (
         <div className='search-page'>
-            <h1>This is the search area</h1>
+            <h1>Search For Your Favorite Groceries</h1>
             <form className='add-food-form'>
          <input className='food-input'
          type="text"
-         placeholder='Enter an Ingredient'
+         placeholder={placeholder}
          name="foodItem"
          value={foodItem}
          onChange={handleChange}
+         onFocus={handleFocus}
          />
          </form>
-         <button className='submit-button' onClick={handleSubmit}>Submit</button>
+         <button className='submit-button' onClick={handleSubmit}>Search</button>
          <div className='foods-display'>
             {foodsToDisplay}
          </div>

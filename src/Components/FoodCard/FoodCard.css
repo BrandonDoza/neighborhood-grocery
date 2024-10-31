@@ -20,6 +20,19 @@ img {
 
 .food-name {
     width: 50%;
-    height: 50%;
-    font-size: x-large;
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: large;
+}
+
+.add-button {
+    width: 35%;
+    height: 100%;
+    border-radius: 8px;
+    background-color: white;
+    font-family: "Poiret One", sans-serif;
+    font-weight: 800;
 }

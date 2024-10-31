@@ -11,6 +11,7 @@ export default function FoodCard({
             </div>
             <div className='food-name'>
             <h1>{name}</h1>
+            <button className='add-button'>Add To Cart</button>
             </div>
         </div>
     )
