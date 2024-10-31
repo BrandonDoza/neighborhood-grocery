@@ -20,6 +20,28 @@ export default function Search({fetchFoodItem}) {
        console.log(form)
     }
 
+    async function handleSubmit(e) {
+        e.preventDefault();
+        if (!form.foodItem) { 
+            return console.error('You must fill out the form');
+        } else {
+            try {
+                const data = await fetchFoodItem(foodItem);
+                setSearchedFoods(data.hints);  // Update state with the resolved data
+                console.log(searchedFoods);
+            } catch (error) {
+                console.error('Error fetching food item:', error);
+            }
+        }
+        resetForm()
+    }
+
+    function resetForm() {
+        setForm({
+            foodItem: ''
+        })
+    }
+
     return (
         <div className='search-page'>
             <h1>This is the search area</h1>
@@ -32,7 +54,7 @@ export default function Search({fetchFoodItem}) {
          onChange={handleChange}
          />
          </form>
-         <button>Submit</button>
+         <button onClick={handleSubmit}>Submit</button>
         </div>
     )
 }

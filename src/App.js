@@ -11,7 +11,7 @@ function App() {
       <NavBar/>
       <Routes>
       <Route path='/' element={<Main/>}/>
-      <Route path='/search' element={<Search/>} fetchFoodItem={fetchFoodItem}/>
+      <Route path='/search' element={<Search fetchFoodItem={fetchFoodItem}/> } />
       </Routes>
      
     </div>
