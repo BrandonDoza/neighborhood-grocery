@@ -13,7 +13,9 @@ export default function NavBar() {
                     <NavLink to='/search' className='link'>
                     <p>Search Groceries</p>
                     </NavLink>
-                <p>My Cart</p>
+                    <NavLink to='/cart' className='link'>
+                    <p>My Cart</p>
+                    </NavLink>
             </div>
         </div>
     )
