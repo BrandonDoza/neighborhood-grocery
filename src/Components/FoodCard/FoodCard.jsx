@@ -6,8 +6,12 @@ export default function FoodCard({
 }) {
     return (
         <div className='food-card'>
-            <h1>{name}</h1>
+            <div className='image'>
             <img src={img} alt={`picture of a ${name}`} />
+            </div>
+            <div className='food-name'>
+            <h1>{name}</h1>
+            </div>
         </div>
     )
 
