@@ -16,13 +16,18 @@ function App() {
     })
     console.log(cart, 'cart')
   }
+
+  function removeItemFromCart(id) {
+    setCart((prevCart) => prevCart.filter((item) => item.id !== id));
+  }
+
   return (
     <div className="App">
       <NavBar/>
       <Routes>
       <Route path='/' element={<Main/>}/>
-      <Route path='/search' element={<Search fetchFoodItem={fetchFoodItem} addItemToCart={addItemToCart}/> } />
-      <Route path='/cart' element={<Cart cart={cart}/>}/>
+      <Route path='/search' element={<Search fetchFoodItem={fetchFoodItem} addItemToCart={addItemToCart} removeItemFromCart={removeItemFromCart} cart={cart} /> } />
+      <Route path='/cart' element={<Cart cart={cart} removeItemFromCart={removeItemFromCart}/>}/>
       </Routes>
      
     </div>

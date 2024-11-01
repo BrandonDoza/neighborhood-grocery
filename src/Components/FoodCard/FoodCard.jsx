@@ -5,11 +5,18 @@ export default function FoodCard({
     name,
     img,
     addItemToCart,
+    removeItemFromCart,
+    cart = []
 }) {
 
-    function handleAddToCart() {
-        const item = { id, name, img };
-        addItemToCart(item);
+    const isInCart = cart.some((item) => item.id === id);
+
+    function handleClick() {
+      if (isInCart) {
+        removeItemFromCart(id);
+      } else {
+        addItemToCart({ id, name, img });
+      }
     }
 
     return (
@@ -19,7 +26,9 @@ export default function FoodCard({
             </div>
             <div className='food-name'>
             <h1>{name}</h1>
-            <button className='add-button'onClick={handleAddToCart}>Add To Cart</button>
+            <button className='add-button'onClick={handleClick}>
+            {isInCart ? 'Remove from Cart' : 'Add to Cart'}
+            </button>
             </div>
         </div>
     )
