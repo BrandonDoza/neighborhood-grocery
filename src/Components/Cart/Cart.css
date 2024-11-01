@@ -4,3 +4,18 @@
     flex-direction: column;
     align-items: center;
 }
+
+.checkout-button {
+    width: 50%;
+    height: 45px;
+    border-radius: 8px;
+    background-color: rgb(179, 232, 179);
+    font-family: "Poiret One", sans-serif;
+    font-weight: 800;
+    font-size: larger;
+    margin: 25px;
+}
+
+.button-container {
+    width: 50%;
+}

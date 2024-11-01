@@ -1,5 +1,6 @@
 import './Cart.css'
 import FoodCard from '../FoodCard/FoodCard'
+import { Link } from 'react-router-dom'
 
 export default function Cart({cart, removeItemFromCart}) {
 
@@ -18,8 +19,15 @@ export default function Cart({cart, removeItemFromCart}) {
     return (
         <div className='cart-display'>
  <h1>Your Cart</h1>
- {itemsInCartToDisplay}
  <p>{`You have ${cart.length} item(s) in your cart`}</p>
+ {itemsInCartToDisplay}
+ {cart.length > 0 && (
+                <div className='button-container'>
+                    <Link to='/checkout'>
+                        <button className='checkout-button'>Checkout</button>
+                    </Link>
+                </div>
+            )}
         </div>
        
     )
