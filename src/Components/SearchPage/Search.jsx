@@ -2,7 +2,7 @@ import './Search.css'
 import { useState, useEffect } from 'react'
 import FoodCard from '../FoodCard/FoodCard'
 
-export default function Search({fetchFoodItem}) {
+export default function Search({fetchFoodItem, addItemToCart, removeItemFromCart, cart}) {
     const [searchedFoods, setSearchedFoods] = useState([])
     const [placeholder, setPlaceholder] = useState('Enter a Food')
     const [form, setForm] = useState({
@@ -54,12 +54,16 @@ export default function Search({fetchFoodItem}) {
         setPlaceholder('')
     }
 
-    const foodsToDisplay = searchedFoods.map((food) => {
+    const foodsToDisplay = searchedFoods.map((food, index) => {
         return (
             <FoodCard
+            key={`${food.food.foodId}-${index}`} 
             id={food.food.foodId}
             name={food.food.label}
             img={food.food.image}
+            addItemToCart={addItemToCart}
+            removeItemFromCart={removeItemFromCart}
+            cart={cart}
             />
         )
     })
