@@ -1,12 +1,5 @@
-.cart-display {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.checkout-button {
-    width: 50%;
+.done-button {
+    width: 30%;
     height: 45px;
     border-radius: 8px;
     background-color: rgb(179, 232, 179);
@@ -15,8 +8,4 @@
     font-size: larger;
     margin: 25px;
     cursor: pointer;
-}
-
-.button-container {
-    width: 50%;
 }
