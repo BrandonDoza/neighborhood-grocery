@@ -19,7 +19,7 @@ export default function Cart({cart, removeItemFromCart}) {
     return (
         <div className='cart-display'>
  <h1>Your Cart</h1>
- <p>{`You have ${cart.length} item(s) in your cart`}</p>
+ <p>{!cart.length ? 'Your Cart Is Empty' : `You have ${cart.length} item(s) in your cart`}</p>
  {itemsInCartToDisplay}
  {cart.length > 0 && (
                 <div className='button-container'>

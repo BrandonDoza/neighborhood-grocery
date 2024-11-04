@@ -1,4 +1,5 @@
 import './Checkout.css'
+import { Link } from 'react-router-dom'
 
 export default function Checkout({cart}) {
     const itemsInCart = cart.map((item) => {
@@ -14,7 +15,9 @@ export default function Checkout({cart}) {
                 <h2>You have the following item(s) in your cart</h2>
                 {itemsInCart}
                 <p>{`For a total of ${cart.length} item(s)`}</p>
-                <button>Purchase Items</button>
+                <Link to='/confirmation'>
+                <button className='purchase-button'>Purchase Items</button>
+                </Link>
         </div>
         
     )
