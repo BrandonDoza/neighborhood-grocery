@@ -16,7 +16,6 @@ function App() {
     setCart((prevCart) => {
       return [...prevCart, item];
     });
-    console.log(cart, "cart");
   }
 
   function removeItemFromCart(id) {

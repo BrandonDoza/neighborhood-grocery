@@ -16,10 +16,6 @@ export default function Search({
 
   const { foodItem } = form;
 
-  useEffect(() => {
-    console.log(searchedFoods, "searched");
-  }, [searchedFoods]);
-
   function handleChange(e) {
     setForm((prevData) => {
       return {
