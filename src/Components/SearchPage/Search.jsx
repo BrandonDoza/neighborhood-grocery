@@ -58,7 +58,7 @@ export default function Search({fetchFoodItem, addItemToCart, removeItemFromCart
         return (
             <FoodCard
             key={`${food.food.foodId}-${index}`} 
-            id={food.food.foodId}
+            id={`${food.food.foodId}-${index}`} 
             name={food.food.label}
             img={food.food.image}
             addItemToCart={addItemToCart}
