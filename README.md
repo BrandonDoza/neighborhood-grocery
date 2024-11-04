@@ -13,7 +13,7 @@
 
 ## Installation Instructions:
 ### Clone the repo to your machine
-- git clone 
+- git clone git@github.com:BrandonDoza/neighborhood-grocery.git  
 - cd neighborhood-grocery
 - npm install to install packages
 - npm start to run the local server
